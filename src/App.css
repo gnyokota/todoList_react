@@ -1,38 +1,127 @@
+/* App component  */
 .App {
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  color: #ffd369;
+}
+
+.todo-container {
+  margin: 20px auto;
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #393e46;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* TodoList Component  */
+ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.no-todos {
+  margin: 30px 5px;
+}
+
+/* Todo component  */
+.list-item {
+  margin: 2px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.todo-btn {
+  background-color: transparent;
+  font-size: 1.2rem;
+  border: none;
+  margin: 5px;
+  padding-top: 1px;
+  color: #ffd369;
+}
+
+.style-btn:focus {
+  outline: none;
+}
+
+/* names for the grid position */
+input {
+  grid-area: input;
+}
+
+.add-btn {
+  grid-area: add-btn;
+}
+
+.clean-btn {
+  grid-area: clean-btn;
+}
+
+/* TodoForm component  */
+.todo-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "input input input input"
+    ". add-btn clean-btn .";
+  justify-items: center;
+}
+
+input {
+  margin: 5px;
+  padding: 4px;
+  border: solid 1px #ffd369;
+  border-radius: 4px;
+  width: 90%;
+  font-size: 1rem;
+  background-color: #393e46;
+  color: #eeeeee;
+}
+
+input::placeholder {
+  color: #ffd369;
+}
+
+input:focus {
+  outline-width: 1px;
+  outline-color: #ffd369;
+}
+
+.form-btn {
+  margin: 5px;
+  width: 80%;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: #ffd369;
+  color: #393e46;
+  border: none;
+}
+
+.form-btn:focus {
+  outline-width: 1px;
+  outline-color: #ffd369;
+}
+
+footer {
+  color: #ffd369;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* break point  */
+@media only screen and (max-device-width: 480px) {
+  .todo-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "input input"
+      "add-btn clean-btn";
   }
 }
